@@ -1,0 +1,51 @@
+{
+    "manifestVersion": 1,
+    "id": "azure-pipelines-tasks-flyway",
+    "name": "Flyway Build & Release Tasks",
+    "version": "0.0.1",
+    "publisher": "mfilotto",
+    "targets": [{
+        "id": "Microsoft.VisualStudio.Services"
+    }],
+    "description": "Tasks to execute flyway commands during Azure DevOps Build & Release pipelines",
+    "categories": [
+        "Build and release"
+    ],
+    "icons": {
+        "default": "vss-extension-icon.png"
+    },
+    "files": [
+        { "path": "FlywayInstaller/.dist", "packagePath": "FlywayInstaller" }
+    ],
+    "repository" : {
+        "type" : "git",
+        "uri" : "https://github.com/mfilotto/azure-pipelines-tasks-flyway"
+    },
+    "links": {
+        "support": {
+            "uri": "https://github.com/mfilotto/azure-pipelines-tasks-flyway/issues"
+        },
+        "license": {
+            "uri": "https://github.com/mfilotto/azure-pipelines-tasks-flyway/blob/master/LICENSE"
+        }
+    }, 
+    "galleryFlags": [
+        "Public",
+        "Preview"
+    ],
+    "tags" : [
+        "flyway", "azurerm", "azure", "infrastructure as code", "iac", "cloud", "deploy", "database"
+    ],
+    "contributions": [
+        {
+            "id": "azure-pipelines-tasks-flyway-installer",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "FlywayInstaller"
+            }
+        }
+    ]
+}

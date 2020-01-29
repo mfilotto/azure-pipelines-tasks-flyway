@@ -1,0 +1,45 @@
+{
+  "name": "azure-pipelines-tasks-flyway-installer",
+  "version": "0.1.0",
+  "description": "Azure devops pipeline task to install flyway",
+  "main": ".bin/index.js",
+  "scripts": {
+    "build": "tsc --build",
+    "pack": "./node_modules/.bin/copyfiles package.json task.json icon.png \".bin/*.js\" -e \".bin/tests/*\" .dist && cd .dist && npm install --only=prod",
+    "delete": "./node_modules/.bin/tfx build tasks delete --task-id e4d7a958-82c3-4b55-94da-4ff052cdf119",
+    "upload": "./node_modules/.bin/tfx build tasks upload --task-path .dist",
+    "start": "node --require dotenv/config .bin/index.js",
+    "test": "nyc -r cobertura -r html ./node_modules/.bin/mocha \".bin/tests/**/*_spec.js\" --reporter mocha-junit-reporter --reporter-options mochaFile=./.test-output/flyway-installer.xml",
+    "test:local": "./node_modules/.bin/mocha \".bin/tests/**/*_spec.js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mfilotto/azure-pipelines-tasks-flyway.git"
+  },
+  "keywords": [
+    "flyway",
+    "azure-devops",
+    "vsts"
+  ],
+  "author": "Mathieu Filotto v",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mfilotto/azure-pipelines-tasks-flyway/issues"
+  },
+  "homepage": "https://github.com/mfilotto/azure-pipelines-tasks-flyway#readme",
+  "dependencies": {
+    "vsts-task-lib": "^2.7.0",
+    "vsts-task-tool-lib": "^0.10.0"
+  },
+  "devDependencies": {
+    "@types/node": "^10.12.0",
+    "@types/q": "^1.5.1",
+    "copyfiles": "^2.1.0",
+    "dotenv": "^6.1.0",
+    "mocha": "^5.2.0",
+    "mocha-junit-reporter": "^1.18.0",
+    "nyc": "^13.1.0",
+    "tfx-cli": "^0.6.3",
+    "typescript": "^3.1.6"
+  }
+}
