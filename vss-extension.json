@@ -9,7 +9,7 @@
     }],
     "description": "Tasks to execute flyway commands during Azure DevOps Build & Release pipelines",
     "categories": [
-        "Build and release"
+        "Azure Pipelines"
     ],
     "icons": {
         "default": "vss-extension-icon.png"
