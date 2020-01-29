@@ -21,6 +21,11 @@
         "type" : "git",
         "uri" : "https://github.com/mfilotto/azure-pipelines-tasks-flyway"
     },
+    "content": {
+        "details": {
+            "path": "overview.md"
+        }
+    },    
     "links": {
         "support": {
             "uri": "https://github.com/mfilotto/azure-pipelines-tasks-flyway/issues"
