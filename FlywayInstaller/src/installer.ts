@@ -17,6 +17,7 @@ export async function download(inputVersion: string): Promise<string>{
         console.log("Flyway not installed, downloading from: ", url);
         var ext = os.type() == 'Windows_NT' ? 'zip' : 'tar.gz';
         var fileName = `${flywayToolName}-${version}-${uuidV4()}.${ext}`;
+        var zipFolderName = `${flywayToolName}-${version}`;
         console.log("Flyway file name as: ", fileName);
         try{                        
             var downloadPath = await tools.downloadTool(url, fileName);
@@ -33,7 +34,7 @@ export async function download(inputVersion: string): Promise<string>{
             unzippedPath = await tools.extractTar(downloadPath);
         }
         console.log("Extracted flyway to dir: ", unzippedPath);
-        cachedToolPath = await tools.cacheDir(unzippedPath, flywayToolName, version);
+        cachedToolPath = await tools.cacheDir(unzippedPath +  '\\' + zipFolderName, flywayToolName, version);
         console.log("Flyway installed in path: ", cachedToolPath);
     }
 
@@ -72,7 +73,7 @@ function getDownloadUrl(version: string): string {
 
 function getExecutableExtension(): string {
     if (isWindows) {
-        return ".exe";
+        return ".cmd";
     }
     return "";
 }
