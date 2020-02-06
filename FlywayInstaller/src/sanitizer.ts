@@ -1,9 +1,9 @@
-import { cleanVersion } from 'vsts-task-tool-lib';
+import { cleanVersion } from 'azure-pipelines-tool-lib/tool';
 
 export function sanitizeVersion(inputVersion: string) : string {
-    var version = cleanVersion(inputVersion);
-        if(!version){
-            throw new Error("The input version '" + inputVersion + "' is not a valid semantic version");
-        }
-        return version;
+    const version: string = cleanVersion(inputVersion);
+    if(!version){
+        throw new Error("The input version '" + inputVersion + "' is not a valid semantic version");
+    }
+    return version;
 }

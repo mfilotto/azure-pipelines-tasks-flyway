@@ -1,6 +1,6 @@
 {
   "name": "azure-pipelines-tasks-flyway-installer",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Azure devops pipeline task to install flyway",
   "main": ".bin/index.js",
   "scripts": {
@@ -28,8 +28,8 @@
   },
   "homepage": "https://github.com/mfilotto/azure-pipelines-tasks-flyway#readme",
   "dependencies": {
-    "vsts-task-lib": "^2.7.0",
-    "vsts-task-tool-lib": "^0.10.0"
+    "azure-pipelines-task-lib": "^2.9.3",
+    "azure-pipelines-tool-lib": "^0.12.0"
   },
   "devDependencies": {
     "@types/node": "^10.12.0",

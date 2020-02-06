@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "azure-pipelines-tasks-flyway",
     "name": "Flyway Build & Release Tasks",
-    "version": "0.0.6",
+    "version": "0.0.7",
     "publisher": "mfilotto",
     "targets": [{
         "id": "Microsoft.VisualStudio.Services"

@@ -1,6 +1,6 @@
-import tasks = require('vsts-task-lib/task');
+import tasks = require('azure-pipelines-task-lib/task');
 import { sanitizeVersion } from './sanitizer'
-import * as tools from 'vsts-task-tool-lib/tool';
+import * as tools from 'azure-pipelines-tool-lib/tool';
 import * as path from 'path';
 import * as fs from 'fs';
 import * as os from 'os';
@@ -10,7 +10,7 @@ const flywayToolName = "flyway";
 const isWindows = os.type().match(/^Win/);
 
 export async function download(inputVersion: string): Promise<string>{
-    var version = sanitizeVersion(inputVersion);
+    const version: string = sanitizeVersion(inputVersion);
     var cachedToolPath = tools.findLocalTool(flywayToolName, version);
     if(!cachedToolPath){        
         var url = getDownloadUrl(version);
