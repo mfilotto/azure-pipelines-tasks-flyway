@@ -13,9 +13,9 @@
   ],
   "demands": [],
   "version": {
-    "Major": "#{GitVersion.Major}#",
-    "Minor": "#{GitVersion.Minor}#",
-    "Patch": "#{GitVersion.Patch}#"
+    "Major": "0",
+    "Minor": "0",
+    "Patch": "4"
   },
   "minimumAgentVersion": "1.95.0",
   "instanceNameFormat": "Use Flyway $(flywayVersion)",

@@ -18,11 +18,7 @@ async function verifyFlyway(){
     console.log("Verifying Flyway installation. Executing 'flyway version'");
     var flywayToolPath = tasks.which("flyway", true);
     var flywayTool = tasks.tool(flywayToolPath);
-    if(isWindows) {
-        flywayTool.arg("-v");
-    }else{
-        flywayTool.arg("version");
-    }
+    flywayTool.arg("-v");
     return flywayTool.exec()
 }
 

@@ -34,7 +34,7 @@ export async function download(inputVersion: string): Promise<string>{
             unzippedPath = await tools.extractTar(downloadPath);
         }
         console.log("Extracted flyway to dir: ", unzippedPath);
-        cachedToolPath = await tools.cacheDir(unzippedPath +  '\\' + zipFolderName, flywayToolName, version);
+        cachedToolPath = await tools.cacheDir(unzippedPath +  '/' + zipFolderName, flywayToolName, version);
         console.log("Flyway installed in path: ", cachedToolPath);
     }
 
@@ -50,11 +50,7 @@ function findFlyway(rootFolder: string) {
     console.log("Resolving path to Flyway tool...");
     var flywayPath = path.join(rootFolder, flywayToolName + getExecutableExtension());
     console.log("Expected Flyway path: ", flywayPath)
-    var allPaths = tasks.find(rootFolder);
-    console.log("Searching the following paths: ", allPaths);
-    var matchingResultsFiles = tasks.match(allPaths, flywayPath, rootFolder);
-    console.log("Matched files: ", matchingResultsFiles);
-    return matchingResultsFiles[0];
+    return flywayPath;
 }
 
 function getDownloadUrl(version: string): string {

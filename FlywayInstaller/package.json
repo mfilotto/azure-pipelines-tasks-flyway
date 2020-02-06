@@ -1,6 +1,6 @@
 {
   "name": "azure-pipelines-tasks-flyway-installer",
-  "version": "0.1.0",
+  "version": "0.0.4",
   "description": "Azure devops pipeline task to install flyway",
   "main": ".bin/index.js",
   "scripts": {
