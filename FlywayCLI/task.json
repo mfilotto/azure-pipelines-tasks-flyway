@@ -14,7 +14,7 @@
     "version": {
         "Major": "0",
         "Minor": "0",
-        "Patch": "1"
+        "Patch": "2"
     },
     "minimumAgentVersion": "1.95.0",
     "instanceNameFormat": "flyway $(command)",
@@ -30,7 +30,7 @@
             "name": "command",
             "type": "pickList",
             "label": "Command",
-            "defaultValue": "validate",
+            "defaultValue": "migrate",
             "required": true,
             "helpMarkDown": "The flyway command to run.",
             "options": {
@@ -56,21 +56,21 @@
         {
             "name": "url",
             "type": "string",
-            "label": "The jdbc url to use to connect to the database",
-            "helpMarkDown": "The jdbc url must follow standard format.",
+            "label": "JDBC url",
+            "helpMarkDown": "The jdbc url must follow standard format. These formats can be found on Flyway documentation. [Ex for SQL Server](https://flywaydb.org/documentation/database/sqlserver). But first be sure [your database is supported](https://flywaydb.org/documentation/commandline/#jdbc-drivers)",
             "required": true
         },
         {
             "name": "user",
             "type": "string",
-            "label": "The user to use to connect to the database",
+            "label": "Database user",
             "helpMarkDown": "The user to use to connect to the database",
             "required": false
         },
         {
             "name": "password",
             "type": "string",
-            "label": "The password to use to connect to the database",
+            "label": "Database password",
             "helpMarkDown": "The password to use to connect to the database",
             "required": false
         },               
