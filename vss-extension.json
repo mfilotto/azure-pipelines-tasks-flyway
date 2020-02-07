@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "azure-pipelines-tasks-flyway",
     "name": "Flyway Build & Release Tasks",
-    "version": "0.0.7",
+    "version": "0.0.8",
     "publisher": "mfilotto",
     "targets": [{
         "id": "Microsoft.VisualStudio.Services"
@@ -15,7 +15,8 @@
         "default": "vss-extension-icon.png"
     },
     "files": [
-        { "path": "FlywayInstaller/.dist", "packagePath": "FlywayInstaller" }
+        { "path": "FlywayInstaller/.dist", "packagePath": "FlywayInstaller" },
+        { "path": "FlywayCLI/.dist", "packagePath": "FlywayCLI" }
     ],
     "repository" : {
         "type" : "git",
@@ -51,6 +52,16 @@
             "properties": {
                 "name": "FlywayInstaller"
             }
-        }
+        },
+        {
+            "id": "azure-pipelines-tasks-flyway-cli",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "FlywayCLI"
+            }
+        }        
     ]
 }

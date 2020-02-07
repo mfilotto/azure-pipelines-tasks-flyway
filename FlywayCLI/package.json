@@ -1,0 +1,49 @@
+{
+  "name": "azure-pipelines-tasks-flyway-cli",
+  "version": "0.0.1",
+  "description": "Azure deveops pipeline task to execute flyway cli commands",
+  "main": ".bin/index.js",
+  "scripts": {
+    "build": "tsc --build",
+    "pack": "./node_modules/.bin/copyfiles package.json task.json icon.png \".bin/*.js\" -e \".bin/tests/*\" .dist && cd .dist && npm install --only=prod",
+    "delete": "./node_modules/.bin/tfx build tasks delete --task-id 721c3f90-d938-11e8-9d92-09d7594721b5",
+    "upload": "./node_modules/.bin/tfx build tasks upload --task-path .dist",
+    "start": "node --require dotenv/config .bin/index.js",
+    "test": "./node_modules/.bin/nyc -r cobertura -r html \"./node_modules/.bin/mocha\" \".bin/tests/**/*_spec.js\" --timeout 999999 --reporter mocha-junit-reporter --reporter-options \"mochaFile=./.test-output/terraform-cli.xml\"",
+    "test:local": "./node_modules/.bin/mocha \".bin/tests/**/*_spec.js\" --timeout 999999"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mfilotto/azure-pipelines-tasks-flyway.git"
+  },
+  "keywords": [
+    "flyway",
+    "azure-devops",
+    "vsts"
+  ],
+  "author": "Mathieu Filotto v",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mfilotto/azure-pipelines-tasks-flyway/issues"
+  },
+  "homepage": "https://github.com/mfilotto/azure-pipelines-tasks-flyway#readme",
+  "devDependencies": {
+    "@types/mocha": "^5.2.6",
+    "@types/node": "^10.12.27",
+    "@types/q": "^1.5.1",
+    "copyfiles": "^2.1.0",
+    "dotenv": "^6.2.0",
+    "mocha": "^5.2.0",
+    "mocha-junit-reporter": "^1.18.0",
+    "nyc": "^13.3.0",
+    "tfx-cli": "^0.6.4",
+    "typescript": "^3.3.3333"
+  },
+  "dependencies": {
+    "applicationinsights": "^1.4.0",
+    "azure-devops-node-api": "^7.0.0",
+    "azure-pipelines-task-lib": "^2.7.1",
+    "inversify": "^5.0.1",
+    "reflect-metadata": "^0.1.13"
+  }
+}
