@@ -1,6 +1,6 @@
 {
   "name": "azure-pipelines-tasks-flyway-cli",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Azure deveops pipeline task to execute flyway cli commands",
   "main": ".bin/index.js",
   "scripts": {

@@ -1,6 +1,6 @@
 {
   "name": "azure-pipelines-tasks-flyway",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "This contains the Azure DevOps Pipeline tasks for installing and executing flyway commands within a build or release. These tasks are intended to work on any build agent. They are also intended to provide a database migration tool.",
   "main": "index.js",
   "dependencies": {},
