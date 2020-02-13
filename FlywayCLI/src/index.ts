@@ -32,7 +32,8 @@ async function run() {
             args.push('-password='+dbPassword);
         }
         if (commandOptions) {
-            args.push(commandOptions);
+            let cO = commandOptions.split(' ');
+            cO.forEach(v => args.push(v));
         }        
         args.push(command);        
         tool = tasks.tool(cmdPath)
