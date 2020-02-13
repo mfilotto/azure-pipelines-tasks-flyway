@@ -1,4 +1,5 @@
 ## To test locally
+```
 cd FlywayInstaller
 source .env-sample
 mkdir -p /tmp/_test-agent/{temp,tools}
@@ -13,3 +14,4 @@ npm run start
 npm run build
 npm run pack
 npm run start
+```
