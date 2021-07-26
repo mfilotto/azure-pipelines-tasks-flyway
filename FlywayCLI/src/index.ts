@@ -21,8 +21,7 @@ async function run() {
         let cmdPath = tasks.which("flyway", true);
         console.log('Flyway found at path: ' + cmdPath);
         let args: string[] = [];
-        args.push('-n');
-        args.push('-color=always');
+        args.push('-n');        
         args.push('-locations=filesystem:'+workingDirectory);
         args.push('-url='+dbUrl);
         if (dbUser) {
