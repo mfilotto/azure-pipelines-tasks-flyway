@@ -39,7 +39,7 @@
     "mocha": "^5.2.0",
     "mocha-junit-reporter": "^1.18.0",
     "nyc": "^13.1.0",
-    "tfx-cli": "^0.6.3",
+    "tfx-cli": "^0.12.0",
     "typescript": "^3.1.6"
   }
 }
